@@ -1,5 +1,5 @@
 let name = "Morgan James Oluwatofunmi";
-const courses = ["C#", "HTML-CSS-JS", "PYTHON" , "NODEJS"];
+const courses = ["C#", " HTML-CSS-JS", " PYTHON" , " NODEJS"];
 console.log("My name is " + name);
 console.log("My courses are " + courses);
 if (courses.length % 2===0) 
