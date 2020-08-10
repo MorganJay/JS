@@ -14,21 +14,29 @@ function ReplaceDivNumbers(integer) {
   //loop to check from 1 to given parameter
   for (let n = 1; n <= integer; n++) {
     //number divisibility checks
-    if (n % 2 === 0 && n % 3 === 0 && n % 5 === 0) {
+    if (n % 2 === 0 && n % 3 === 0 && n % 5 === 0) 
+    {
       rangeArray.push(div_two_three_five);
-    } else if (n % 2 === 0 && n % 3 === 0) {
+    } else if (n % 2 === 0 && n % 3 === 0) 
+    {
       rangeArray.push(div_two_three);
-    } else if (n % 2 === 0 && n % 5 === 0) {
+    } else if (n % 2 === 0 && n % 5 === 0) 
+    {
       rangeArray.push(div_two_five);
-    } else if (n % 3 === 0 && n % 5 === 0) {
+    } else if (n % 3 === 0 && n % 5 === 0) 
+    {
       rangeArray.push(div_three.concat("-", div_five));
-    } else if (n % 2 === 0) {
+    } else if (n % 2 === 0) 
+    {
       rangeArray.push(div_two);
-    } else if (n % 3 === 0) {
+    } else if (n % 3 === 0) 
+    {
       rangeArray.push(div_three);
-    } else if (n % 5 === 0) {
+    } else if (n % 5 === 0) 
+    {
       rangeArray.push(div_five);
-    } else {
+    } else 
+    {
       rangeArray.push(n);
     }
   }
@@ -36,4 +44,4 @@ function ReplaceDivNumbers(integer) {
   return rangeArray;
 }
 ReplaceDivNumbers(10);
-ReplaceDivNumbers(16);
+ReplaceDivNumbers(30);
