@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events</title>
+</head>
+<body>
+    <!-- Inline Event Handler -->
+<button onclick="changeText()">
+    Click me
+</button>
+<button class="btn"> Click me pls</button>
+<button id= "button3"> Abeg</button>
+<p>
+    I will change.
+</p>
+
+<script>
+    // function to modify text content of the paragraph 
+    function changeText()
+    {
+        document.querySelector('p').textContent = 'I changed cus of an event handler';
+        document.body.style.background = 'blue';
+    }
+
+    //Add event handler as a property of the button element
+    document.querySelector('.btn').onclick = changeText;
+    function addButton()
+    {
+        const newButton = document.createElement("button");
+         newButton.innerText = "Javascript!";
+        document.body.appendChild(newButton);
+    }
+    //Event Listener
+    document.querySelector('#button3').addEventListener('click', changeText);
+    document.querySelector("button").addEventListener("click", addButton);
+
+    var button = document.querySelector('button');
+    button.addEventListener('mouseover', function()
+    {
+        this.style.backgroundColor = 'red';
+    });
+    button.addEventListener('mouseout', function()
+    {
+        this.style.backgroundColor = "rgb(239, 239, 239)";
+    })
+</script>
+
+<style>
+    button
+    {
+        size: 100px;
+    
+    }
+</style>
+</body>
+</html>

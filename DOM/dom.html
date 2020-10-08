@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+    .para {
+        color: red;
+    }
+
+    #first {
+        color: blue;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .text-red {
+        color: red;
+    }
+</style>
+
+<body  onload= "window.alert('Welcome to my home page!');">
+    <main>
+        <div class="left-panel" style="float: left; align-items: center;">
+            <p id="first" class="para"> This is a paragraph</p>
+            <p class="para">Second paragraph</p>
+            <ul>
+                <li>
+                    shifsd
+                </li>
+                <li>
+                    dsiaisand
+                </li>
+            </ul>
+            <button id="add-content">Add content</button>
+        </div>
+        <div id="body" class="right-panel" style="float: right; width: 80%; text-align: center;">
+            <h1>JavaScript DOM</h1>
+            <p>First paragraph</p>
+            <p id="secondp">Second Paragraph, check out my colour!</p>
+
+            <div id="team">Team Perfection</div>
+
+            <img id="image" src="donald.jpg" alt="something dey" width="300" height="400">
+            <p id="para" onclick="this.innerText = 'wowu'">check how i change</p>
+            <p onclick="this.innerHTML ='i just changed!' ">change text</p>
+            <button id="textbutton" onclick="this.innerHTML = 'changed nowww!'">Change me</button>
+            <div id="space" style="height: 200px;"></div>
+        </div>
+    </main>
+
+    <script>
+        // const paragraph = document.getElementById("first");
+        // const para = document.getElementsByClassName("para")
+        // const p = document.getElementsByTagName("p");
+        // const allInOne = document.querySelector("p");
+        // const overall = document.querySelectorAll("p");
+        // console.log(overall);
+
+        const main = document.querySelector("main");
+        function addElements() {
+            let newlink = document.createElement("P");
+            newlink.innerText = "This is a link";
+            let newBtn = document.createElement("button");
+            newBtn.innerHTML = "Click me!";
+            newBtn.addEventListener('click', function () {
+                newBtn.previousElementSibling.classList.toggle('text-red');
+            })
+            main.appendChild(newlink);
+            main.appendChild(newBtn);
+        }
+        const btn = document.querySelector("#add-content")
+        btn.addEventListener('click', addElements)
+
+        //right panel
+        var go = "sjifnisdfas";
+        document.getElementById("team").innerHTML = "hello team perfection";
+
+        var tag = document.getElementsByTagName("p");
+
+        const para = document.getElementById("para").innerText = tag[1].innerText;
+
+        document.getElementById("image").src = "photo.jpg";
+
+        document.getElementById("secondp").style.color = "red";
+
+        document.getElementById("textbutton").onclick = function () {
+            document.getElementById("para").style.color = "green";
+        }
+
+    </script>
+
+</body>
+
+</html>
